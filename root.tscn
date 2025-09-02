@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://6k6ir5yahknp"]
+
+[ext_resource type="Script" path="res://camera_3d.gd" id="1_pq8q7"]
+[ext_resource type="Script" path="res://root.gd" id="1_pyidc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pyidc"]
+size = Vector2(4, 2.25)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_pyidc")
+
+[node name="WebView" type="WebView" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+url = "https://godotengine.org"
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WebView"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.016822, 0, -0.0560666)
+mesh = SubResource("PlaneMesh_pyidc")
+
+[node name="info" type="TextEdit" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -580.0
+offset_bottom = 67.0
+grow_horizontal = 0
+text = "Hold right-click and WASD to fly around with the camera
+Enable \"capture keys\" in the webview inspector to capture keys"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.37573)
+script = ExtResource("1_pq8q7")
