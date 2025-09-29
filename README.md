@@ -1,4 +1,4 @@
-## godot-webview demo
+## godot-webview
 
 1. Download this repository
 2. Extract the [godot-webview addon](https://godotwebview.com/pages/downloads/) into the root of the project.
